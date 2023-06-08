@@ -31,6 +31,7 @@ if (isset($_POST['update'])) {
 <div class="container p-4">
   <div class="row">
     <div class="col-md-4 mx-auto">
+      <span class="text-info font-bold">Edicion de Tarea</span>
       <div class="card card-body">
         <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="POST">
           <div class="form-group">
@@ -39,7 +40,7 @@ if (isset($_POST['update'])) {
           <div class="form-group">
             <textarea name="description" class="form-control" cols="30" rows="10"><?php echo $description; ?></textarea>
           </div>
-          <button class="btn-success" name="update">
+          <button class="m-2 btn btn-success" name="update">
             Update
           </button>
         </form>

@@ -23,20 +23,24 @@
       <!-- ADD TASK FORM -->
       <div class="card card-body">
         <form action="saveTask.php" method="POST">
+          <legend>Formulario</legend>
           <div class="form-group">
             <input type="text" name="title" class="form-control" placeholder="Titulo" autofocus required>
           </div>
+          <br>
           <div class="form-group">
             <textarea name="description" rows="2" class="form-control" placeholder="Descripción"></textarea>
           </div>
-          <input type="submit" name="saveTask" class="btn btn-success btn-block" value="Guardar">
+          <input type="submit" name="saveTask" class="btn btn-success btn-block m-2" value="Guardar">
         </form>
       </div>
     </div>
     <div class="col-md-8">
+      <legend>Registros</legend>
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Titulo</th>
             <th>Descripcion</th>
             <th>Fecha</th>
@@ -51,6 +55,7 @@
 
           while ($row = mysqli_fetch_assoc($result_tasks)) { ?>
             <tr>
+              <td><?php echo $row['id']; ?></td>
               <td><?php echo $row['title']; ?></td>
               <td><?php echo $row['description']; ?></td>
               <td><?php echo $row['created_at']; ?></td>
